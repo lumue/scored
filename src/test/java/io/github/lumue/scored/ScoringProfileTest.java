@@ -1,25 +1,21 @@
-#scored 
+package io.github.lumue.scored;
 
-a small scoring library for java.
+import io.github.lumue.scored.beans.TestBean;
+import org.junit.Assert;
+import org.junit.Test;
 
-##purpose
+import static org.junit.Assert.assertNotNull;
 
-used to calculate a score for a java bean and a scoring profile. a scoring profile consists of a number of weighted scoring categories.
-see also [this german wikipedia article on scoring or "Nutzwertanalyse"](https://de.wikipedia.org/wiki/Nutzwertanalyse).
-
-###building
-
-the project is hosted on github, and can be built using gradle:
-
-    git clone git@github.com:lumue/scored.git
-    gradle run
-
-###usage
-
-example usage:
+/**
+ * Created by lm on 02.11.15.
+ */
+public class ScoringProfileTest {
 
 
-    DiscreteValueRange<String> valueRange = DiscreteValueRange.<String>builder().addValue("A").build();
+	@Test
+	public void testCompute() throws Exception {
+
+		DiscreteValueRange<String> valueRange = DiscreteValueRange.<String>builder().addValue("A").build();
 		ScoringCategory<TestBean, String> scoringCategory = ScoringCategory.<TestBean, String>builder()
 				.addRange(new ScoredValueRange<>(valueRange, 10))
 				.withPropertyAccessor(bean -> bean.getText())
@@ -35,3 +31,6 @@ example usage:
 
 		Assert.assertEquals(new Integer(100),testProfile.computeScore(testBeanA));
 		Assert.assertEquals(new Integer(0),testProfile.computeScore(testBeanB));
+
+	}
+}
