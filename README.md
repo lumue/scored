@@ -12,7 +12,7 @@ see also [this german wikipedia article on scoring or "Nutzwertanalyse"](https:/
 the project is hosted on github, and can be built using gradle:
 
     git clone git@github.com:lumue/scored.git
-    gradle run
+    gradle build
 
 ###usage
 
