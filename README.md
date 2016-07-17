@@ -1,5 +1,7 @@
 #scored 
 
+[![Build Status](https://travis-ci.org/lumue/scored.svg?branch=master)](https://travis-ci.org/lumue/scored)
+
 a small scoring library for java.
 
 ##purpose
